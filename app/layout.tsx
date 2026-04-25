@@ -1,7 +1,4 @@
-export const metadata = {
-  title: 'Doylestown Auto Content Engine',
-  description: 'AI-Powered Content for Audi & Porsche Owners',
-}
+import React from 'react'
 
 export default function RootLayout({
   children,
