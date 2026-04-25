@@ -23,25 +23,25 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
-        <h1 className="text-2xl font-bold mb-4 text-blue-900">Doylestown Auto Content Engine</h1>
-        <p className="mb-6 text-gray-600 text-sm">Enter a service (ex: Audi Q5 Timing Chain) to generate a Kennedy-style blog and post it to your site.</p>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundColor: '#f3f4f6', padding: '20px', fontFamily: 'sans-serif'}}>
+      <div style={{backgroundColor: 'white', padding: '40px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', maxWidth: '400px', width: '100%'}}>
+        <h1 style={{fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', color: '#1e3a8a'}}>Doylestown Auto Content Engine</h1>
+        <p style={{marginBottom: '24px', color: '#4b5563', fontSize: '14px'}}>Enter a repair topic to generate a Dan Kennedy style blog post for Audi/Porsche owners.</p>
         <input 
           type="text" 
-          className="w-full p-3 border rounded mb-4 text-black" 
-          placeholder="Service or Repair Topic..." 
+          style={{width: '100%', padding: '12px', border: '1px solid #d1d5db', borderRadius: '4px', marginBottom: '16px', boxSizing: 'border-box'}} 
+          placeholder="ex: Audi Q5 Timing Chain" 
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
         />
         <button 
           onClick={handleGenerate}
           disabled={loading}
-          className="w-full bg-blue-600 text-white p-3 rounded font-bold hover:bg-blue-700 disabled:bg-gray-400"
+          style={{width: '100%', backgroundColor: '#2563eb', color: 'white', padding: '12px', borderRadius: '4px', border: 'none', fontWeight: 'bold', cursor: 'pointer'}}
         >
           {loading ? 'Generating...' : 'Generate & Post to WordPress'}
         </button>
-        {status && <p className="mt-4 p-3 bg-blue-50 text-blue-800 text-xs rounded border border-blue-200">{status}</p>}
+        {status && <p style={{marginTop: '16px', padding: '12px', backgroundColor: '#eff6ff', color: '#1e40af', fontSize: '12px', borderRadius: '4px', border: '1px solid #bfdbfe'}}>{status}</p>}
       </div>
     </div>
   );
